@@ -1,0 +1,9 @@
+html {
+    font-family: system-ui, -apple-system, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body, input, textarea, select, button {
+    font-family: inherit;
+}
