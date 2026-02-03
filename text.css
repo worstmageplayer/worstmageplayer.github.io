@@ -7,6 +7,16 @@
     padding: 10px;
 }
 
+.osu {
+    font-family: "Torus", sans-serif;
+    display: inline-block;
+    border-radius: 6px;
+    text-decorations: none;
+    background: #ff66aa;
+    border: white;
+    padding: 10px 16px;
+}
+
 .center {
     text-align: center;
 }
