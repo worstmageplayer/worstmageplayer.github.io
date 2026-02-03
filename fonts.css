@@ -16,3 +16,11 @@ body, input, textarea, select, button {
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "MonaSans";
+  src: url("./fonts/MonaSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
