@@ -12,7 +12,15 @@ body, input, textarea, select, button {
 @font-face {
   font-family: "Torus";
   src: url("./fonts/Torus-Regular.otf") format("opentype");
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Torus";
+  src: url("./fonts/Torus-Bold.otf") format("opentype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -20,7 +28,15 @@ body, input, textarea, select, button {
 @font-face {
   font-family: "MonaSans";
   src: url("./fonts/MonaSans-Regular.woff") format("woff");
-  font-weight: normal;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MonaSans";
+  src: url("./fonts/MonaSans-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

@@ -13,11 +13,13 @@
     padding: 0 12px;
 
     --btn-font: inherit;
+    --btn-font-weight: 400;
     --btn-bg: #000000;
     --btn-color: #ffffff;
     --btn-border: transparent;
 
     font-family: var(--btn-font);
+    font-weight: var(--btn-font-weight);
     background: var(--btn-bg);
     color: var(--btn-color);
     border: 2px solid var(--btn-border);
@@ -28,6 +30,7 @@
 
 .btn--osu {
     --btn-font: "Torus", sans-serif;
+    --btn-font-weight: 400;
     --btn-bg: #ff66aa;
     --btn-color: #ffffff;
     --btn-border: #ffffff;
@@ -35,6 +38,7 @@
 
 .btn--github {
     --btn-font: "MonaSans", sans-serif;
+    --btn-font-weight: 400;
     --btn-bg: #0A241B;
     --btn-color: #F2F5F3;
     --btn-border: #F2F5F3;
