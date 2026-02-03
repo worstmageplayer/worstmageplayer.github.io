@@ -1,3 +1,9 @@
+.h1 {
+    text-align: center;
+    border: 5px solid #9DAADE;
+    padding: 10px;
+}
+
 .center {
     margin: auto;
     text-align: center;
