@@ -1,5 +1,7 @@
 .h1 {
     text-align: center;
+    background-color:FBCEB1;
+    width: 67%;
     border: 5px solid #9DAADE;
     padding: 10px;
 }
