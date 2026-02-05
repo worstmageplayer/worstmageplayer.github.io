@@ -12,9 +12,36 @@
         <link rel="stylesheet" href="mambo/mambo.css">
         <link rel="stylesheet" href="linkButtons.css">
 
+        <style>
+            #jumpscareOverlay {
+                position: fixed;
+                inset: 0;
+                display: none;
+                background: black;
+                z-index: 9999;
+                align-items: center;
+                justify-content: center;
+            }
+            #jumpscareOverlay.show { display: flex; }
+            #jumpscareOverlay img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                user-select: none;
+                pointer-events: none;
+            }
+        </style>
     </head>
     <body>
-                    <!-- comment -->
+        <!-- comment -->
+        <audio src="jumpscare/jumpscare.mp3" id="jumpscareAudio"></audio>
+        <div id="jumpscareOverlay" aria-hidden="true">
+            <img id="jumpscareImage" src="jumpscare/jumpscare.webp">
+        </div>
+        <script src="jumpscare/jumpscare.js"></script>
+
+
         <div class="h1 no-select" id="boom" style="cursor: pointer">
             <h1>Hi</h1>
         </div>
