@@ -9,16 +9,24 @@
         <link rel="stylesheet" href="background.css">
         <link rel="stylesheet" href="text.css">
         <link rel="stylesheet" href="time.css">
+        <link rel="stylesheet" href="mambo/mambo.css">
         <link rel="stylesheet" href="linkButtons.css">
 
     </head>
     <body>
                     <!-- comment -->
-        <div class="h1">
-        <h1>Hi</h1>
+        <div class="h1 no-select" id="boom" style="cursor: pointer">
+            <h1>Hi</h1>
         </div>
+        <audio src="vine-boom.mp3" id="vine-boom"></audio>
+        <script src="click.js"></script>
 
         <h2>This is my website</h2>
+
+        <img src="mambo/mambo.gif" class="mambo" style="cursor: pointer" id="mambo"></img>
+        <audio src="mambo/mambosound.mp3" id="mambomp3"></audio>
+        <script src="mambo/mambo.js"></script>
+
         <p>Text</p>
 
         <div class="time">
@@ -32,14 +40,14 @@
             href="https://osu.ppy.sh/u/slhj"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn--osu"
+            class="btn btn--osu no-select"
         ><strong>osu!</strong>&nbsp;profile</a>
 
         <a
             href="https://github.com/worstmageplayer"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn--github"
+            class="btn btn--github no-select"
             ><strong>GitHub</strong>&nbsp;profile</a>
 
         <h2>Bye</h2>
