@@ -1,0 +1,9 @@
+.time {
+    width: fit-content;
+    font-family: serif;
+    border-radius: 5px;
+    color: #ffffff;
+    padding: 8px 24px;
+    background-color: #0A1633;
+    margin: 10px auto;
+}
