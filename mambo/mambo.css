@@ -3,11 +3,12 @@
     background: #ffffff;
     border-radius: 5px;
     margin-bottom: 1em;
+    max-width: 50%;
 }
 
 .mambo img {
     filter: drop-shadow(4px 10px 4px rgba(0, 0, 0, 0.4));
-    max-width: 50%;
+    max-width: 100%;
 }
 
 .mamboContainer {
