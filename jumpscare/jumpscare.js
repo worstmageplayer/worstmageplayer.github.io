@@ -3,11 +3,12 @@ const jumpscareImage = document.getElementById("jumpscareImage");
 const jumpscareAudio = document.getElementById("jumpscareAudio");
 
 let rand = 0;
+let prev = 0;
 const DURATION = 1000;
 
 setInterval(() => {
     rand = Math.floor(Math.random() * 50);
-    if (rand == 1) {
+    if (rand == 1 && Date.now() > prev + 50000) {
         // replay image
         const base = jumpscareImage.getAttribute('data-base-src') || jumpscareImage.src;
         jumpscareImage.setAttribute('data-base-src', base);
@@ -20,6 +21,8 @@ setInterval(() => {
         // play audio
         jumpscareAudio.currentTime = 0;
         jumpscareAudio.play();
+
+        prev = Date.now();
 
         setTimeout(() => {
             jumpscareOverlay.classList.remove('show');
