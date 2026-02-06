@@ -3,7 +3,7 @@ const jumpscareImage = document.getElementById("jumpscareImage");
 const jumpscareAudio = document.getElementById("jumpscareAudio");
 
 let rand = 0;
-const DURATION = 420;
+const DURATION = 1000;
 
 setInterval(() => {
     rand = Math.floor(Math.random() * 50);
