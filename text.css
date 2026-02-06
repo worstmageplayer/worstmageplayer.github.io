@@ -7,6 +7,11 @@
     padding: 10px;
 }
 
+.inline-flex {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
 .center {
     text-align: center;
 }
