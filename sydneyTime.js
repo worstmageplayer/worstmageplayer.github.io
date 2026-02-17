@@ -1,13 +1,13 @@
 function getSydneyTime() {
-    const sydneyTime = new Date(new Date().toLocaleString("en-AU", {timeZone: "Australia/Sydney"}));
-    const pad = (num) => num.toString().padStart(2, '0');
+    const formatter = new Intl.DateTimeFormat("en-AU", {
+        timeZone: "Australia/Sydney",
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+    });
 
-    const hour = pad(sydneyTime.getHours());
-    const minute = pad(sydneyTime.getMinutes());
-    const second = pad(sydneyTime.getSeconds());
-
-    const time = `${hour}:${minute}:${second}`;
-    return time;
+    return formatter.format(new Date());
 }
 
 document.getElementById("sydneyTime").textContent = getSydneyTime();
