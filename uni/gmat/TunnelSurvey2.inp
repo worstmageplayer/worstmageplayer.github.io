@@ -1,0 +1,71 @@
+COMMENT          Dis       ppm       Dir      cent      H
+DSD              0.1       1.0       0.1       1.0       1.0
+
+COORDINATE 9001                            30.3708       25.4323       35.3515
+COORDINATE 9002                            45.2661       24.2492       35.7576
+COORDINATE 9003                            69.3534       20.0382       36.4081
+COORDINATE 9004                            76.8369        6.9976       36.2796
+COORDINATE    1 ENH                         0.0000        0.0000       34.5670
+COORDINATE    2                            26.9418       19.4060       34.9572
+COORDINATE    3                            50.8973       29.1049       35.3075
+COORDINATE    4                            66.9816       25.7482       35.6394
+COORDINATE    5                            79.9938        8.1482       36.3251
+COORDINATE    6                            90.9226       -9.5646       36.6631
+
+COMMENT THIS IS FOR THE NORTH BEARING STUFF ------------------------------------
+COORDINATE 1111 EN                          0.0000       10.0000        0.0000
+DIRECTION     1 1111    9   0  0  0.00
+DIRECTION     1    2    9  54 14  6.00
+H DISTANCE 1111    1             10.0000
+HEIGHT DIF 1111    1              0.0000
+
+COMMENT DIRECTIONS -------------------------------------------------------------
+DIRECTION  9001    1    1   0  0  0.00
+DIRECTION  9001    2    1 339 34 33.75
+DIRECTION  9001    3    1 209 47 55.75
+
+DIRECTION  9002    2    2   0  0  0.00
+DIRECTION  9002    3    2 154  2 14.50
+DIRECTION  9002    4    2 190 51 21.50
+
+DIRECTION  9003    3    3   0  0  0.00
+DIRECTION  9003    4    3  41 16 54.50
+DIRECTION  9003    5    3 202  0 42.50
+
+DIRECTION  9004    4    4   0  0  0.00
+DIRECTION  9004    5    4  97 42  1.25
+DIRECTION  9004    6    4 167 20 46.75
+
+COMMENT HDISTANCE --------------------------------------------------------------
+H DISTANCE 9001    1             39.6130
+H DISTANCE 9001    2              6.9333
+H DISTANCE 9001    3             20.8520
+
+H DISTANCE 9002    2             18.9540
+H DISTANCE 9002    3              7.4360
+H DISTANCE 9002    4             21.7670
+
+H DISTANCE 9003    3             20.5630
+H DISTANCE 9003    4              6.1830
+H DISTANCE 9003    5             15.9560
+
+H DISTANCE 9004    4             21.1828
+H DISTANCE 9004    5              3.3600
+H DISTANCE 9004    6             21.7420
+
+COMMENT HEIGHTDIF --------------------------------------------------------------
+HEIGHT DIF 9001    1             -0.7845
+HEIGHT DIF 9001    2             -0.3945
+HEIGHT DIF 9001    3             -0.0438
+
+HEIGHT DIF 9002    2             -0.8003
+HEIGHT DIF 9002    3             -0.4505
+HEIGHT DIF 9002    4             -0.1180
+
+HEIGHT DIF 9003    3             -1.1003
+HEIGHT DIF 9003    4             -0.7695
+HEIGHT DIF 9003    5             -0.0825
+
+HEIGHT DIF 9004    4             -0.6398
+HEIGHT DIF 9004    5              0.0450
+HEIGHT DIF 9004    6              0.3835
