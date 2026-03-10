@@ -1,5 +1,5 @@
 COMMENT          Dis       ppm       Dir      cent      H
-DSD              0.1       1.0       0.1       1.0       1.0
+DSD              2.0       2.0       3.0       0.0       1.0
 
 COORDINATE 9001                            30.3708       25.4323       35.3515
 COORDINATE 9002                            45.2661       24.2492       35.7576
