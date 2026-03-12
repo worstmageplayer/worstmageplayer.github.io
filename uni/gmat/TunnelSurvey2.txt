@@ -13,11 +13,7 @@ COORDINATE    5                            79.9938        8.1482       36.3251
 COORDINATE    6                            90.9226       -9.5646       36.6631
 
 COMMENT THIS IS FOR THE NORTH BEARING STUFF ------------------------------------
-COORDINATE 1111 EN                          0.0000       10.0000        0.0000
-DIRECTION     1 1111    9   0  0  0.00
-DIRECTION     1    2    9  54 14  6.00
-H DISTANCE 1111    1             10.0000
-HEIGHT DIF 1111    1              0.0000
+AZIMUTH       1    2    9  54 14  6.00
 
 COMMENT DIRECTIONS -------------------------------------------------------------
 DIRECTION    61    1    1   0  0  0.00

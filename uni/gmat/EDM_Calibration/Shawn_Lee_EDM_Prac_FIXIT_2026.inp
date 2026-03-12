@@ -1,0 +1,46 @@
+TITLE     2025  UNSW BASELINE EDM Topcon 
+
+EDM CAL
+COMMENT    When processing this data in FIXIT select YES for the JMR reduction for heights
+COMMENT    Note: new values added as per BRH in 2026
+
+DIFF
+
+COMMENT      mm       ppm
+DSD         0.5191    0.5191
+
+COMMENT     Use local coordinates not MGA (MGA has a scale factor in it)
+COMMENT    <pt> ENH <point name   > <E m         > <N m         > <H m         >
+COORDINATE    1 ENH STATION 1               0.0000     1000.0000       27.2390
+COORDINATE    2  NH STATION 2              15.0890      999.9890       27.1950
+COORDINATE    3  NH STATION 3              90.0085      999.9909       27.4820
+COORDINATE    4  NH STATION 4             224.9961      999.9903       28.2290
+COORDINATE    5  NH STATION 5             390.0046     1000.0030       31.8440
+COORDINATE    6  NH STATION 6             495.0049      999.9892       35.9580
+COORDINATE    7  NH STATION 7             539.9994     1000.0000       43.1000
+COORDINATE    8 ENH STATION 8             584.6856     1000.0000       48.4970
+
+COMMENT   Slope distances were observed with 0 ppm for atmos then observed T & P used to correct
+COMMENT   the distances for atmos effects via the formulas in the EDM calib spreadsheet.
+COM        <fr> <to>     <dist         ><sdv mm  ><  HI    ><  HT    >
+COMMENT    from   to       slope dist              H inst    H prism
+S DIST       1    2        15.0865                 1.600     1.670
+S DIST       1    3        90.0103                 1.600     1.738
+S DIST       1    6        495.0842                1.600     1.746
+S DIST       1    7        540.2288                1.600     1.629
+S DIST       1    8        585.0659                1.600     1.560
+
+S DIST       2    5        374.9465                1.670     1.648
+S DIST       2    6        479.9896      9999      1.670     1.746
+S DIST       2    7        525.1483                1.670     1.629
+
+S DIST       3    4        134.9923                1.738     1.620
+S DIST       3    5        300.0251                1.738     1.648
+S DIST       3    7        450.2526                1.738     1.629
+S DIST       3    8        495.1104                1.738     1.560
+
+S DIST       5    6        105.0848                1.648     1.746
+S DIST       5    7        150.4112                1.648     1.629
+S DIST       5    8        195.3787                1.648     1.560
+
+S DIST       7    8        44.9996                 1.629     1.560
