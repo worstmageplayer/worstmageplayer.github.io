@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVEN3501 Last-Minute Study Sheet</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d1117;
+    --surface: #161b22;
+    --border: #21262d;
+    --accent-blue: #58a6ff;
+    --accent-green: #3fb950;
+    --accent-yellow: #d29922;
+    --accent-orange: #f0883e;
+    --accent-purple: #bc8cff;
+    --accent-red: #f85149;
+    --text: #e6edf3;
+    --text-muted: #8b949e;
+    --tag-bg: #1f2937;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 24px;
+  }
+  header {
+    border-bottom: 2px solid var(--accent-blue);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  header h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 22px;
+    color: var(--accent-blue);
+    letter-spacing: -0.5px;
+  }
+  header .subtitle {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .section.full { grid-column: 1 / -1; }
+  .section-header {
+    padding: 8px 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-header.blue   { background: rgba(88,166,255,0.12); color: var(--accent-blue); border-bottom: 1px solid rgba(88,166,255,0.2); }
+  .section-header.green  { background: rgba(63,185,80,0.12);  color: var(--accent-green); border-bottom: 1px solid rgba(63,185,80,0.2); }
+  .section-header.yellow { background: rgba(210,153,34,0.12); color: var(--accent-yellow); border-bottom: 1px solid rgba(210,153,34,0.2); }
+  .section-header.orange { background: rgba(240,136,62,0.12); color: var(--accent-orange); border-bottom: 1px solid rgba(240,136,62,0.2); }
+  .section-header.purple { background: rgba(188,140,255,0.12);color: var(--accent-purple); border-bottom: 1px solid rgba(188,140,255,0.2); }
+  .section-header.red    { background: rgba(248,81,73,0.12);  color: var(--accent-red); border-bottom: 1px solid rgba(248,81,73,0.2); }
+  .section-body { padding: 12px 14px; }
+
+.method { margin-bottom: 10px; }
+.method:last-child { margin-bottom: 0; }
+.method-title {
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11px;
+font-weight: 600;
+color: var(–text-muted);
+margin-bottom: 4px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+ol, ul { padding-left: 16px; }
+li { margin-bottom: 2px; color: var(–text); }
+
+.formula {
+background: #0d1117;
+border: 1px solid var(–border);
+border-left: 3px solid var(–accent-blue);
+border-radius: 4px;
+padding: 6px 10px;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 11.5px;
+color: var(–accent-blue);
+margin: 6px 0;
+}
+.formula.green  { border-left-color: var(–accent-green);  color: var(–accent-green); }
+.formula.yellow { border-left-color: var(–accent-yellow); color: var(–accent-yellow); }
+.formula.orange { border-left-color: var(–accent-orange); color: var(–accent-orange); }
+.formula.purple { border-left-color: var(–accent-purple); color: var(–accent-purple); }
+.formula.red    { border-left-color: var(–accent-red);    color: var(–accent-red); }
+
+.tag {
+display: inline-block;
+background: var(–tag-bg);
+border-radius: 3px;
+padding: 1px 6px;
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+color: var(–text-muted);
+margin-left: 6px;
+vertical-align: middle;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+font-size: 11.5px;
+margin-top: 6px;
+}
+th {
+background: #0d1117;
+color: var(–text-muted);
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 10px;
+text-transform: uppercase;
+padding: 5px 8px;
+text-align: left;
+border-bottom: 1px solid var(–border);
+}
+td {
+padding: 4px 8px;
+border-bottom: 1px solid var(–border);
+vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(255,255,255,0.02); }
+
+.warn {
+background: rgba(248,81,73,0.08);
+border: 1px solid rgba(248,81,73,0.25);
+border-radius: 4px;
+padding: 6px 10px;
+font-size: 11.5px;
+color: #ffa198;
+margin-top: 6px;
+}
+.tip {
+background: rgba(63,185,80,0.08);
+border: 1px solid rgba(63,185,80,0.25);
+border-radius: 4px;
+padding: 6px 10px;
+font-size: 11.5px;
+color: #7ee787;
+margin-top: 6px;
+}
+
+.divider {
+border: none;
+border-top: 1px solid var(–border);
+margin: 10px 0;
+}
+
+@media print {
+body { background: white; color: black; padding: 10px; font-size: 11px; }
+.section { border: 1px solid #ccc; }
+.section-header.blue, .section-header.green, .section-header.yellow,
+.section-header.orange, .section-header.purple, .section-header.red {
+background: #f0f0f0; color: black;
+}
+.formula { background: #f5f5f5; color: #333; border-left: 3px solid #333; }
+header h1, .subtitle { color: black; }
+}
+</style>
+
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>CVEN3501 // Last-Minute Study Sheet</h1>
+    <div class="subtitle">Hydrology &amp; Groundwater · Exam Reference</div>
+  </div>
+  <div class="subtitle">based on past exam questions</div>
+</header>
+
+<div class="grid">
+
+  <!-- ── IFD / AEP ── -->
+
+  <div class="section">
+    <div class="section-header blue">📊 IFD / AEP Lookup <span class="tag">Q A1, A4</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Steps</div>
+        <ol>
+          <li>Sum total rainfall over the storm duration</li>
+          <li>Compare total depth to IFD table for that duration</li>
+          <li>Read off which AEP column it falls between</li>
+          <li>For sub-bursts: sum rainfall for 5, 10, 15 min windows and compare to IFD</li>
+        </ol>
+      </div>
+      <div class="tip">💡 The AEP of the storm = the <strong>most severe</strong> sub-burst AEP found</div>
+      <div class="warn">⚠ Use total depth (mm), not intensity — unless table says intensity (mm/hr)</div>
+    </div>
+  </div>
+
+  <!-- ── Areal Rainfall / Losses ── -->
+
+  <div class="section">
+    <div class="section-header green">💧 Losses &amp; Runoff Volume <span class="tag">Q A1, A2</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Loss Model</div>
+        <div class="formula green">Effective rainfall = Total − Initial loss − Continuing loss × duration</div>
+        <ul>
+          <li>Initial loss applied once at start</li>
+          <li>Continuing loss = mm/hr × time increment (hr)</li>
+          <li>If effective rainfall &lt; 0 in a period → set to 0</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Runoff Volume</div>
+        <div class="formula green">V = Σ(effective rainfall mm) × Area (m²) / 1000</div>
+        <ul>
+          <li>Convert area: 1 ha = 10,000 m², 1 km² = 10⁶ m²</li>
+        </ul>
+      </div>
+      <div class="tip">💡 Larger catchment → smaller areal average rainfall (spatial variability)</div>
+    </div>
+  </div>
+
+  <!-- ── Temporal Patterns & Effective Rainfall Hyetograph ── -->
+
+  <div class="section">
+    <div class="section-header yellow">🌧 Temporal Patterns → Hyetograph <span class="tag">Q A2d, A4d</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Steps</div>
+        <ol>
+          <li>Get total storm depth from IFD table for the AEP &amp; duration</li>
+          <li>Multiply each time increment % by total depth → rainfall per period</li>
+          <li>Apply initial loss first (subtract from early periods, stopping at 0)</li>
+          <li>Then subtract continuing loss (mm/hr × period duration) each period</li>
+          <li>Any negative result → 0 (no negative effective rainfall)</li>
+        </ol>
+      </div>
+      <div class="formula yellow">Depth per period = (% / 100) × Total IFD depth</div>
+      <div class="tip">💡 For "rare storms" temporal pattern → use the rare storms column from Table 2</div>
+    </div>
+  </div>
+
+  <!-- ── Critical Storm Duration ── -->
+
+  <div class="section">
+    <div class="section-header orange">⏱ Critical Storm Duration <span class="tag">Q A2a</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Definition</div>
+        <p>The storm duration that produces the <strong>highest peak flow</strong> at the catchment outlet.</p>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">From Box Plots (Figure 1)</div>
+        <ol>
+          <li>Look at ensemble average (★ star) for each duration</li>
+          <li>Pick the duration with the highest ensemble average flow</li>
+          <li>That is the critical duration</li>
+        </ol>
+      </div>
+      <div class="method">
+        <div class="method-title">Which temporal pattern to give colleagues?</div>
+        <p>Give the pattern that produced the <strong>highest peak flow</strong> within the critical duration ensemble — i.e. the worst-case / most conservative single pattern.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Climate Change ── -->
+
+  <div class="section">
+    <div class="section-header red">🌡 Climate Change on Peak Flows <span class="tag">Q A2e, A4c</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Rainfall Scaling Rule (ARR)</div>
+        <div class="formula red">ΔRainfall ≈ +5% to +10% per 1°C warming</div>
+        <p>Use <strong>~5%/°C</strong> (conservative) or <strong>~7%/°C</strong> (median) unless told otherwise.</p>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Linear Catchment Assumption</div>
+        <div class="formula red">Future Q = Current Q × (1 + ΔRainfall%)</div>
+        <p>Example: 3°C rise, 7%/°C:</p>
+        <div class="formula red">ΔR = 3 × 7% = 21% → Future Q = 270 × 1.21 = 327 m³/s</div>
+      </div>
+      <div class="warn">⚠ IFD tables will need updating; existing infrastructure may be undersized</div>
+    </div>
+  </div>
+
+  <!-- ── Unit Hydrograph ── -->
+
+  <div class="section">
+    <div class="section-header purple">📈 Unit Hydrograph Convolution <span class="tag">Q A5</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Steps to get design hydrograph</div>
+        <ol>
+          <li>Scale UH by rainfall depth for each period</li>
+          <li>Lag each scaled UH by the period number × UH duration</li>
+          <li>Sum all lagged scaled UHs at each timestep</li>
+        </ol>
+        <div class="formula purple">Q(t) = Σ [Pᵢ × UH(t − (i−1)×Δt)]</div>
+      </div>
+      <div class="tip">💡 Linearity: if rainfall doubles, peak flow doubles exactly</div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">S-Curve Method (changing UH duration)</div>
+        <ol>
+          <li>Build S-curve: sum UH + lagged copies (lag = UH duration each time) until plateau</li>
+          <li>Lag S-curve by the <em>target</em> new duration</li>
+          <li>Subtract: S − S_lagged</li>
+          <li>Scale by: (original duration) / (new duration)</li>
+        </ol>
+        <div class="formula purple">New UH = (S − S_lag) × (D_old / D_new)</div>
+      </div>
+      <div class="warn">⚠ S-curve lag = original UH duration. New UH lag = target duration. Don't mix them up!</div>
+    </div>
+  </div>
+
+  <!-- ── Thiessen Weights ── -->
+
+  <div class="section">
+    <div class="section-header blue">🗺 Thiessen Weights <span class="tag">Q A6, A7</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Concept</div>
+        <p>Each gauge is assigned a weight = fraction of catchment area closest to it (Voronoi polygon).</p>
+        <div class="formula">Weight = Area of polygon / Total catchment area</div>
+        <div class="formula">Σ weights = 1.0 always</div>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Square catchment: centre + corner gauge</div>
+        <p>Draw perpendicular bisector between centre and corner. Area closer to centre vs. corner gives ~75% / 25% split (depends on geometry).</p>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Catchment Average Rainfall Excess (A7)</div>
+        <ol>
+          <li>Compute weighted rainfall per period: R_avg = Σ(wᵢ × Rᵢ)</li>
+          <li>Apply initial loss to weighted total</li>
+          <li>Subtract continuing loss per period</li>
+          <li>Sum remaining = <strong>rainfall excess</strong></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── RFFE ── -->
+
+  <div class="section">
+    <div class="section-header green">📡 RFFE / Regional Flood Frequency <span class="tag">Q A3</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Reading RFFE output</div>
+        <table>
+          <tr><th>Term</th><th>Meaning</th></tr>
+          <tr><td>Expected quantile</td><td>Best estimate of peak flow for that AEP</td></tr>
+          <tr><td>5% CL</td><td>Lower bound (flow unlikely to be below this)</td></tr>
+          <tr><td>95% CL</td><td>Upper bound (flow unlikely to exceed this)</td></tr>
+        </table>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Reporting uncertainty</div>
+        <div class="formula green">Design Q = Expected ± [5%CL, 95%CL]</div>
+        <p>e.g. 2% AEP: Q = 373 m³/s (range: 163 – 857 m³/s)</p>
+      </div>
+      <div class="tip">💡 Use RFFE when no stream gauge at site. Uncertainty is large — always report confidence limits!</div>
+    </div>
+  </div>
+
+  <!-- ── Groundwater Hydraulic Head ── -->
+
+  <div class="section">
+    <div class="section-header orange">🔵 Hydraulic Head &amp; Gradient <span class="tag">Q B2, B3, B4</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Hydraulic Head</div>
+        <div class="formula orange">h = z + p/(ρg)</div>
+        <ul>
+          <li>z = elevation of piezometer intake (m ASL)</li>
+          <li>p/(ρg) = pressure head = water height above intake</li>
+          <li>h = water level elevation (m ASL)</li>
+        </ul>
+        <div class="formula orange">h = Surface elevation − Depth to water</div>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Hydraulic Gradient</div>
+        <div class="formula orange">i = Δh / ΔL   (dimensionless)</div>
+        <p>Direction = from high head → low head</p>
+      </div>
+      <div class="tip">💡 Upward gradient (deep h &gt; shallow h) = artesian / upward flow from aquifer to surface</div>
+    </div>
+  </div>
+
+  <!-- ── Darcy / Aquifer Flow ── -->
+
+  <div class="section">
+    <div class="section-header purple">🌊 Darcy's Law &amp; Aquifer Flow <span class="tag">Q B3, B5</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Darcy's Law</div>
+        <div class="formula purple">q = −K · i   (specific discharge, m/day)</div>
+        <div class="formula purple">Q = q · A = K · i · A   (volumetric flow, m³/day)</div>
+        <ul>
+          <li>K = hydraulic conductivity (m/day)</li>
+          <li>A = cross-sectional area = width × aquifer thickness</li>
+          <li>T = K × b (transmissivity, m²/day)</li>
+        </ul>
+      </div>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Flow through a section</div>
+        <div class="formula purple">Q = T · i · W</div>
+        <p>W = width of section (m), T = transmissivity (m²/day)</p>
+      </div>
+      <div class="warn">⚠ Equipotentials closer together → higher gradient → higher velocity (converging flow)</div>
+    </div>
+  </div>
+
+  <!-- ── Groundwater Concepts ── -->
+
+  <div class="section full">
+    <div class="section-header blue">📚 Key Groundwater Concepts <span class="tag">Q B1</span></div>
+    <div class="section-body">
+      <table>
+        <tr>
+          <th>Term</th><th>Definition</th><th>Units</th><th>Key Point</th>
+        </tr>
+        <tr><td><strong>Hydraulic head</strong></td><td>Total energy per unit weight = elevation + pressure head</td><td>m</td><td>Drives groundwater flow</td></tr>
+        <tr><td><strong>Specific discharge</strong></td><td>Darcy flux = Q/A (not actual pore velocity)</td><td>m/s or m/day</td><td>q = K·i</td></tr>
+        <tr><td><strong>Hydraulic conductivity</strong></td><td>Ease of fluid flow through porous medium</td><td>m/s or m/day</td><td>Depends on fluid + medium</td></tr>
+        <tr><td><strong>Intrinsic permeability</strong></td><td>Property of medium only (not fluid)</td><td>m²</td><td>k = K·μ/(ρg)</td></tr>
+        <tr><td><strong>Storage coefficient</strong></td><td>Volume of water released per unit area per unit head drop</td><td>dimensionless</td><td>Confined: 10⁻⁵–10⁻³</td></tr>
+        <tr><td><strong>Specific yield</strong></td><td>Drainable porosity in unconfined aquifer</td><td>dimensionless</td><td>Typically 0.1–0.3</td></tr>
+        <tr><td><strong>Delayed drainage</strong></td><td>Slow drainage from unsaturated zone after water table drop</td><td>—</td><td>Unconfined aquifers only</td></tr>
+        <tr><td><strong>Well losses</strong></td><td>Head loss inside well due to turbulence / poor construction</td><td>m</td><td>Causes drawdown > theoretical</td></tr>
+        <tr><td><strong>Construction casing</strong></td><td>Steel/PVC pipe lining bore to prevent collapse</td><td>—</td><td>Blank above screen zones</td></tr>
+        <tr><td><strong>Drill bit</strong></td><td>Cutting tool at base of drill string</td><td>—</td><td>Size determines bore diameter</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── Energy Equation ── -->
+
+  <div class="section">
+    <div class="section-header red">⚡ Bernoulli / Energy Equation <span class="tag">Q B4</span></div>
+    <div class="section-body">
+      <div class="method">
+        <div class="method-title">Total energy per unit mass</div>
+        <div class="formula red">E = v²/2 + gz + p/ρ   (J/kg)</div>
+        <ul>
+          <li>v²/2 = kinetic (velocity) term</li>
+          <li>gz = potential (gravity) term; g = 9.80 m/s²</li>
+          <li>p/ρ = pressure term</li>
+        </ul>
+      </div>
+      <div class="tip">💡 Groundwater velocity is tiny (~10⁻³ m/s) so v²/2 ≈ negligible (&lt;0.001% of total)</div>
+    </div>
+  </div>
+
+  <!-- ── Stream-Aquifer ── -->
+
+  <div class="section">
+    <div class="section-header green">🏞 Stream–Aquifer Interaction <span class="tag">Q B2</span></div>
+    <div class="section-body">
+      <table>
+        <tr><th>Condition</th><th>Flow direction</th><th>Stream type</th></tr>
+        <tr><td>Aquifer head &gt; stream elevation</td><td>Groundwater → Stream</td><td>Gaining (baseflow ✓)</td></tr>
+        <tr><td>Aquifer head &lt; stream elevation</td><td>Stream → Aquifer</td><td>Losing (recharges GW)</td></tr>
+        <tr><td>Upward gradient between deep &amp; shallow</td><td>Deep aquifer → surface</td><td>Artesian / upward</td></tr>
+      </table>
+      <hr class="divider">
+      <div class="method">
+        <div class="method-title">Impact of GW drawdown on ecosystem</div>
+        <ul>
+          <li>Reduced baseflow → stream may dry up in dry season</li>
+          <li>Riparian vegetation loses access to water table → stress/death</li>
+          <li>Wetlands may drain; habitat loss</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:16px; text-align:center; font-family:'IBM Plex Mono',monospace; font-size:10px; color: var(--text-muted);">
+  CVEN3501 · Hydrology &amp; Groundwater · Good luck! 🎓
+</div>
+
+</body>
+</html>
