@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Triangle Solver</title>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Triangle Solver</h1>
+        </header>
+
+        <main>
+            <section class="card">
+                <div class="title">Inputs</div>
+                <div class="content">
+                    <div class="grid2">
+                        <div class="field">
+                            <label for="a">Side a</label>
+                            <input id="a" type="number" min="0" step="any" placeholder="e.g. 5" />
+                        </div>
+                        <div class="field">
+                            <label for="A">Angle A</label>
+                            <input id="A" type="number" min="0" step="any" placeholder="e.g. 40" />
+                        </div>
+
+                        <div class="field">
+                            <label for="b">Side b</label>
+                            <input id="b" type="number" min="0" step="any" placeholder="e.g. 7" />
+                        </div>
+                        <div class="field">
+                            <label for="B">Angle B</label>
+                            <input id="B" type="number" min="0" step="any" placeholder="e.g. 60" />
+                        </div>
+
+                        <div class="field">
+                            <label for="c">Side c</label>
+                            <input id="c" type="number" min="0" step="any" placeholder="e.g. 9" />
+                        </div>
+                        <div class="field">
+                            <label for="C">Angle C</label>
+                            <input id="C" type="number" min="0" step="any" placeholder="e.g. 80" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <button id="clearBtn" class="secondary" type="button">Clear</button>
+                        <button id="exampleBtn" class="secondary" type="button">Load example (SAS)</button>
+                    </div>
+
+                    <div id="status" class="status">
+                        Enter at least 3 values that define a triangle (with at least one side).
+                    </div>
+
+                    <div class="results" id="results" style="display:none;">
+                        <div class="kv"><div class="k">a</div><div class="v" id="outA"></div></div>
+                        <div class="kv"><div class="k">A (deg)</div><div class="v" id="outAngA"></div></div>
+                        <div class="kv"><div class="k">b</div><div class="v" id="outB"></div></div>
+                        <div class="kv"><div class="k">B (deg)</div><div class="v" id="outAngB"></div></div>
+                        <div class="kv"><div class="k">c</div><div class="v" id="outC"></div></div>
+                        <div class="kv"><div class="k">C (deg)</div><div class="v" id="outAngC"></div></div>
+                    </div>
+
+                    <div class="hint">
+                        Notes:
+                        <ul>
+                            <li>Angles must sum to 180° (after solving).</li>
+                            <li>SSA can have 0/1/2 solutions; this page chooses a valid one and warns if ambiguous.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card">
+                <div class="title">Visualization</div>
+                <div class="vizWrap">
+                    <svg id="svg" viewBox="0 0 900 520" preserveAspectRatio="xMidYMid meet" aria-label="triangle visualization">
+                        <rect x="10" y="10" width="880" height="500" rx="14" ry="14"
+                        fill="transparent" stroke="rgba(255,255,255,0.06)"/>
+
+                        <path id="tri" d="" fill="rgba(122,162,255,0.12)" stroke="rgba(233,238,252,0.85)" stroke-width="3" />
+
+                        <circle id="pA" r="5" fill="rgba(56,217,169,0.95)"></circle>
+                        <circle id="pB" r="5" fill="rgba(56,217,169,0.95)"></circle>
+                        <circle id="pC" r="5" fill="rgba(56,217,169,0.95)"></circle>
+
+                        <text id="labelA" font-size="16" fill="rgba(233,238,252,0.95)"></text>
+                        <text id="labelB" font-size="16" fill="rgba(233,238,252,0.95)"></text>
+                        <text id="labelC" font-size="16" fill="rgba(233,238,252,0.95)"></text>
+
+                        <text id="labela" font-size="14" fill="rgba(233,238,252,0.85)"></text>
+                        <text id="labelb" font-size="14" fill="rgba(233,238,252,0.85)"></text>
+                        <text id="labelc" font-size="14" fill="rgba(233,238,252,0.85)"></text>
+
+                        <path id="arcA" d="" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2"/>
+                        <path id="arcB" d="" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2"/>
+                        <path id="arcC" d="" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="2"/>
+
+                        <text id="angleA" font-size="13" fill="rgba(255,255,255,0.75)"></text>
+                        <text id="angleB" font-size="13" fill="rgba(255,255,255,0.75)"></text>
+                        <text id="angleC" font-size="13" fill="rgba(255,255,255,0.75)"></text>
+
+                        <text id="svgMsg" x="30" y="50" font-size="14" fill="rgba(174,185,232,0.9)"></text>
+                    </svg>
+                </div>
+            </section>
+        </main>
+
+        <script src="./triangle1.js"></script>
+    </body>
+</html>
