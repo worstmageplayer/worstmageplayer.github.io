@@ -28,6 +28,14 @@
     cursor: pointer;
 }
 
+.btn--uni {
+    --btn-font: "Roboto Mono", sans-serif;
+    --btn-font-weight: 400;
+    --btn-bg: #ffdc00;
+    --btn-color: #181716;
+    --btn-border: #181716;
+}
+
 .btn--osu {
     --btn-font: "Torus", sans-serif;
     --btn-font-weight: 400;
