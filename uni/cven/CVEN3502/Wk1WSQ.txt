@@ -1,0 +1,303 @@
+#set page(width: 21cm, height: auto)
+#let C(temp) = box[#temp°C]
+
+= Week 1
+== Workshop Question 1
+A wastewater sample was analysed to characterise the solid content. An evaporating dish was initially weighed to obtain the tare mass and then reweighed after evaporation of a 150 mL sample and then again after ignition in a furnace at #C(550). Then a Whatman "ashless" filter was weighed to obtain the tare mass and then reweighed after filtration of a 150 mL sample and then again after ignition in a furnace at #C(550) Use the measurements below to determine the total solids (TS), volatile solids (VS), dissolved solids(DS), total suspended solids (TSS), and total volatile suspended solids (TVSS).
+- Tare mass of evaporating dish = 24.3520 g
+- Mass of evaporating dish plus residue after evaporation @ #C(105) = 24.3970 g
+- Mass of evaporating dish plus residue after ignition @ #C(550) = 24.3850 g
+- Mass of Whatman "ashless" filter and tare = 1.5103 g
+- Mass of Whatman "ashless" filter and tare after drying @ #C(105) = 1.5439 g
+- Residue on Whatman "ashless" filter and tare after ignition @ #C(550) = 0.024 g
+=== Solution:
+$ "TS" &= ("Mass"_("dish"+"evaporation residue") - "Mass"_"dish") / V_"sample"\
+&= (24.3970 - 24.3520)/0.150 = 0.300" g/L" $
+$ "Fixed solids" &= ("Mass"_("dish"+"ignition residue")-"Mass"_"dish")/"V"_"sample"\
+&= (24.3850 - 24.3520)/0.150 = 0.22" g/L" $
+$ "VS" &= "TS" - "Fixed solids" \
+&= 0.300 - 0.220 = 0.080" g/L" $
+$ "TSS" &= ("Mass"_("filter"+"evaporation residue")-"Mass"_"filter")/"V"_"sample"\
+&= (1.5439-1.5103)/0.150 = 0.224" g/L" $
+$ "DS"&="TS"-"TSS"\
+&=0.300-0.224=0.076" g/L" $
+$ "Fixed suspended solids" &= ("Mass"_"ignition residue"-("Mass"_"ashless filter paper" = 0))/"V"_"sample"\
+&= (0.024 - 0)/0.150 = 0.160" g/L" $
+$ "TVSS" &= "TSS" - "Fixed suspended solids"\
+&= 0.224 -0.160 = 0.064" g/L" $
+
+== Workshop Question 2
+A water sample contains Ca#super[2+] (20 mg/L), Na#super[+] (15 mg/L) and Mg#super[2+] (10 mg/L). The molar mass of Ca#super[2+] = 40 g/mol, Na#super[+] = 23 g/mol, and Mg#super[2+] = 24 g/mol. The molar mass of carbonate ion (CO#sub[3]#super[2-]) = 60 g/mol. Calculate the total hardness (TH) as CaCO#sub[3] for this water sample.
+=== Solution:
+- Note that Na#super[+] does not contribute to hardness.
+#align(center)[#table(
+    columns: 2,
+    stroke: none,
+    align: left,
+    table.header[*Ion*][*Molar concentration*],
+    [Ca#super[2+]], [$(0.020" g/L")/(40" g/mol") = 5.0 dot 10^(-4)" mol/L"$],
+    [Mg#super[2+]], [$(0.010" g/L")/(24" g/mol") = 4.2 dot 10^(-4)" mol/L"$]
+)]
+Total Molar concentration of hardness species:
+$ (5.0 + 4.2) dot 10^(-4)" mol/L" = 9.2 dot 10^(-4)" mol/L" $
+Total concentration of hardness as CaCO#sub[3], (TH):
+$ "concentration of CaCO"_3 dot "molar mass of CaCO"_3 &= 9.2 dot 10^(-4)" mol/L" dot (40+60)" g/mol"\
+&= 0.092" g/L"\
+&= 92" mg/L" $
+
+== Workshop Question 3
+A 100 mL sample of water is titrated with 0.02 N H#sub[2]SO#sub[4]. The initial pH is 9.8 and 16.6 mL acid is required to reach the pH 4.5 endpoint. Determine the following:
+#set enum(numbering: "a)")
++ Hydrogen ion concentration [H#super[+]]
++ Hydroxide ion concentration [OH#super[-]]
++ total alkalinity expressed as mg/L CaCO#sub[3]
+=== Solution:
++ $["H"^+] = 10^(-"pH") = 10^(-9.8) = 1.6 dot 10^(-10)" mol/L"$
++ $["OH"^-]["H"^+] = "k"_"w" = 10^(-14)$\
+    $["OH"^-] = (10^(-14))/(1.6 dot 10^(-10)) = 6.3 dot 10^(-5)" mol/L"$
++ $"Total Alk (mg L CaCO"_3")" = ("total mL "0.02" N H"_2"SO"_4" to reach pH "4.5 dot 1000)/"mL sample" = (16.6 dot 0.02 dot 50000)/100 =166" mg/L as CaCO"_3$
+
+== Workshop Question 4
+Estimate the head loss through a coarse screen before and after the accumulation of solids occurs. Assume the following conditions for solving the problem. The approach velocity and velocity through the screen are 0.5 meters per second and 0.9 meters per second respectively. The open area through the clean bar screen is 0.20 m#super[2].
++ Estimate the head loss (m) through the clean bar screen assuming a discharge coefficient of 0.7 for a clean screen.
++ Estimate the head loss (m) through the clogged bar screen assuming a discharge coefficient of 0.6 for a clogged screen and that 50% of the flow area has been blocked by the debris.
+=== Solution:
++ Estimate headloss through bar screen.
+    $ "h"_"L" &= 1/"C" (("V"^2_"BS"-"V"^2_"A")/(2 dot "g"))\
+    &= 1/0.7 (((0.9^2 - 0.5^2)" "frac("m", "s", style:"horizontal"))/(2 dot 9.81" "frac("m", "s"^2, style:"horizontal")))\
+    &= 0.041" m" $
+    This is not an appreciable loss of energy or pressure drop. The headloss through mechanically cleaned coarse screens is typically 150 mm or 0.15 m.
++ Determine area through bar screen assuming 50% reduction in flow area. Use continuity equation to calculate volumetric flow rate and new velocity when screen becomes clogged.
+    $ "Q"&="A"dot"V"\
+    &= 0.20" m"^2 dot 0.9" "frac("m", "s", style:"horizontal")\
+    &= 0.18" "frac("m"^3, "s", style:"horizontal") $
+    Estimate the headloss through the bar screen.
+    $ "h"_"L" &= 1/"C" (("V"^2_"BS"-"V"^2_"A")/(2 dot "g"))\
+    &= 1/0.6 (((1.8^2 - 0.5^2)" "frac("m", "s"^2, style:"horizontal"))/(2 dot 9.81" "frac("m", "s"^2, style:"horizontal")))\
+    &= 0.25" m" $
+
+== Workshop Question 5
+Two horizontal-flow grit chambers are to be designed to remove grit particles with a diameter of 0.15 mm (100 mesh) and specific gravity of 2.65. A flow through velocity of 0.3 m/s will be maintained by a proportioning weir. The average daily wastewater flow is 4 ML/day. The peak hourly flow (PHF) to average daily flow (ADF) ratio is 2.5:1. Determine the channel dimensions (m) for the PHF. Assume that a rectangular cross section for the grit chamber will be used and that the depth of the chamber is 1.5 width at maximum flow.
+=== Solution:
+$ "PHF" &= 2.5 dot "ADF"\
+&= 2.5 dot 4" ML/day"\
+&= 10" ML/day" $
+Determine cross-sectional area using continuity equation.
+$ "Q"="AV" $
+where:
+$ "Q" &= "volumetric flow rate" &&(frac("m"^3, "s", style:"horizontal")) \
+"A" &= "cross-sectional area" &&("m"^2)\
+"V" &= "velocity of flow" &&(frac("m", "s", style:"horizontal"))\ $
+hence,
+$ "A" &= "Q"/"V"\
+&= (10" ML/day")/(0.3" m/s") dot (1" day")/(24 dot 60 dot 60" s") dot 1/2" chambers" dot 1000" "frac("m"^3, "ML", style:"horizontal")\
+&= 0.19" m"^2 $
+Determine width (W) and depth (D) of the channels.
+$ "A" &= "W" dot "D"\
+0.19" m"^2 &= "W" dot 1.5"W"\
+"W" &= sqrt((0.19" m"^2)/1.5) &&= 0.36" m" \
+"D" &= 1.5"W" &&= 0.54" m" $
+Estimate settling velocity of 0.15 mm diameter particle with specific gravity of 2.65.
+$ "V"_"s" &= (3.3" g"("S"_"p"-1)"d")^0.5\
+&= (3.3 dot 9.81" "frac("m", "s"^2, style:"horizontal") dot (2.65-1) dot 0.15" mm" dot (1" m"/1000" mm"))^0.5\
+&= 0.09" "frac("m", "s", style:"horizontal") $
+Calculate detention time, $tau$, by dividing depth by particle settling velocity.
+$ tau &= "D"/"V"_"S"\
+&= (0.54" m")/(0.09" "frac("m", "s", style:"horizontal"))\
+&= 6.0" s" $
+Length of grit chamber is equal to product of detention time and horizontal flowthrough velocity.
+$ "L" &= tau dot "V"_"h"\
+&= 6.0" s" dot 0.3" "frac("m", "s", style:"horizontal")\
+&= 1.8" m" $
+- Note that in practice, the theoretical length would be increased by at least 25% to account for influent and effluent turbulence. Therefore, the overall length should be at least equal to:
+$ "L" = 1.25 dot 1.8" m" = 2.3" m" $
+
+== Workshop Question 6
+Four rectangular settling basins operating in parallel are to be sized for treating 37,850 m#super[3]/day of water. Use a length:width ratio 3:1 and assume a detention time of 3.0 hours. The effluent weir length in each basin is equal to three times the tank width. Assume a "surface loading rate" of 15 (m#super[3]/(m#super[2] day)). Determine the following:
++ The dimensions of each tank (m)
++ The weir loading rate (m#super[3]/(m day))
+=== Solution:
++ Determine the surface area, width and depth.
+    $ "A"_"s" &= "Q"/"V"_"o"\
+    &= (37850" "frac("m"^3, "day", style:"horizontal"))/(4 "basins")\
+    &= 631" m"^2\
+    "A"_"s" &= "L" dot "W"\
+    &= 3"W" dot "W"\
+    &= 631" m"^2\
+    W &= 14.5" m"\
+    L &= 43.5" m" $
+    Determine the volume.
+    $ tau &= "V"/"Q"\
+    "V" &= tau dot "Q"\
+    &= 3" h" dot ((1" d")/(24" h")) dot (37850" "frac("m"^3, "d", style:"horizontal"))/(4 "basins")\
+    &=1183" "frac("m"^3, "basin", style:"horizontal") $
+    Determine the depth.
+    $ "Depth" &= "V"/"A"_"s"\
+    &= (1183" m"^3)/(43.5" m" dot 14.5" m")\
+    &= 1.87" m" $
++ Determine the weir loading rate (WLR).
+    $ "WLR" &= "Q"/"weir length per basin"\
+    &= (37850" "frac("m"^3, "day", style:"horizontal"))/(4" basins" dot 43.4" m")\
+    &= 217" "frac("m"^2, "day", style:"horizontal") $
+
+== Formulas in Week 1
+=== Solids Characterisation
+==== Total Solids (TS)
+$ "TS" = ("M"_("dish"+"evaporation") - "M"_"dish")/"V"_"sample" $
+where:
+$ &"M"_("dish"+"evaporation") &&= "mass of dish" + "residue after evaporation" &&("g")\
+&"M"_"dish" &&= "tare mass of dish" &&("g")\
+&"V"_"sample" &&= "sample volume" &&("L") $
+
+==== Fixed Solids (FS)
+$ "FS" = ("M"_("dish"+"ignition")-"M"_"dish")/"V"_"sample" $
+where:
+$ &"M"_("dish"+"ignition") &&= "mass of dish" + "residue after ignition" &&("g")\
+&"M"_"dish" &&= "tare mass of dish" &&("g")\
+&"V"_"sample" &&= "sample volume" &&("L") $
+
+==== Total Suspended Solids (TSS)
+$ "TSS" = ("M"_("filter"+"evaporation")-"M"_"filter")/"V"_"sample" $
+where:
+$ &"M"_("filter"+"evaporation") &&= "mass of filter" + "tare after drying" &&("g")\
+&"M"_"filter" &&= "tare mass of filter" &&("g")\
+&"V"_"sample" &&= "sample volume" &&("L") $
+
+==== Dissolved Solids (DS)
+$ "DS" = "TS" - "TSS" $
+where:
+$ &"TS" &&= "Total Solids" &&(frac("g", "L", style:"horizontal"))\
+&"TSS" &&= "Total Suspended Solids" &&(frac("g", "L", style:"horizontal")) $
+
+==== Fixed Suspended Solids (FSS)
+$ "FSS" = "M"_("ignition", "residue")/"V"_"sample" $
+where:
+$ &"M"_("ignition", "residue") &&= "net residue mass remaining on filter after ignition" &&("g")\
+&"V"_"sample" &&= "sample volume" &&("L") $
+
+==== Total Volatile Suspended Solids (TVSS)
+$ "TVSS" = "TSS" - "FSS" $
+where:
+$ &"TSS" &&= "Total Suspended Solids" &&(frac("g", "L", style:"horizontal"))\
+&"FSS" &&= "Fixed Suspended Solids" &&(frac("g", "L", style:"horizontal")) $
+
+=== Hardness
+==== Molar concentration of an ion
+$ "C"_"molar" = "C"_"mass"/"MW" $
+where:
+$ &"C"_"mass" &&= "mass concentration of the ion" &&(frac("g", "L", style:"horizontal"))\
+&"MW" &&= "molar mass of the ion" &&(frac("g", "mol", style:"horizontal")) $
+
+==== Total Hardness as CaCO#sub[3] (TH)
+$ "TH" = sum "C"_("molar", "i") dot "MW"_("CaCO"_3) $
+where:
+$ &sum "C"_("molar", "i") &&= "sum of molar concentration of all polyvalent cations (hardness-causing)"\
+&"MW"_("CaCO"_3) &&= "molar mass of CaCO"_3" "(100" "frac("g", "mol", style:"horizontal")) $
+
+=== Alkalinity Titration
+==== Hydrogen ion concentration
+$ ["H"^+] = 10^(-"pH") $
+==== Hydroxide ion concentration
+$ ["OH"^-] = "K"_w/["H"^+] $
+where:
+$ "K"_w = "ion product of water" (10^(-14) "at" #C(25)) $
+
+==== Total Alkalinity (as CaCO#sub[3])
+$ "Alk" = ("V"_"titrant" dot "N" dot 50000)/"V"_"sample" $
+where:
+$ &"V"_"titrant" &&= "volume of standard acid used to reach alkalinity endpoint" &&("mL")\
+&"N" &&= "normality of titrant" &&(frac("eq", "L", style:"horizontal"))\
+&50000 &&= "unit-conversion constant (equivalent weight of CaCO"_3)\
+&"V"_"sample" &&= "sample volume" &&("mL") $
+
+=== Screens
+==== Headloss through a bar screen
+$ "h"_"L" = 1/"C" (("V"_"s"^2 - "V"_"A"^2)/(2"g")) $
+where:
+$ &"h"_"L" &&= "headloss across the screen" &&("m")\
+&"C" &&= "discharge coefficient" &&("dimensionless")\
+&"V"_"s" &&= "velocity through the screen openings" &&(frac("m", "s", style:"horizontal"))\
+&"V"_"A" &&= "approach velocity upstream of the screen" &&(frac("m", "s", style:"horizontal"))\
+&"g" &&= "gravitational acceleration" &&(9.81" "frac("m", "s"^2, style:"horizontal")) $
+==== Continuity equation
+$ "Q" = "A" dot "V" $
+where:
+$ &"Q" &&= "volumetric flow rate" &&(frac("m"^3, "s", style:"horizontal"))\
+&"A" &&= "flow area" &&("m"^2)\
+&"V" &&= "flow velocity" &&(frac("m", "s", style:"horizontal")) $
+
+=== Grit Chambers
+==== Peak flow from a peaking factor
+$ "Q"_"peak" = "PF" dot "Q"_"avg" $
+where:
+$ &"Q"_"peak" &&= "peak design flow"\
+&"PF" &&= "peaking factor (ratio of peak to average flow)"\
+&"Q"_"avg" &&= "average design flow" $
+==== Cross-sectional area
+$ "A" = "Q"/"V" $
+where:
+$ &"A" &&= "cross-sectional area" &&("m"^2)\
+&"Q" &&= "design flow rate per channel/chamber" &&(frac("m"^3, "s", style:"horizontal"))\
+&"V" &&= "flow-through velocity" &&(frac("m", "s", style:"horizontal")) $
+==== Channel dimensions (rectangular)
+$ "A" = "W" dot "D" $
+where:
+$ &"A" &&= "cross-sectional area" &&("m"^2)\
+&"W" &&= "channel width" &&("m")\
+&"D" &&= "channel depth, often specified as" "D" = "k" dot "W" &&("m") $
+==== Discrete particle settling velocity (turbulent regime)
+$ "V"_"s" = sqrt(3.3 "g" ("S"_"p" - 1) "d") $
+where:
+$ &"V"_"s" &&= "settling velocity of the particle" &&(frac("m", "s", style:"horizontal"))\
+&"g" &&= "gravitational acceleration" &&(9.81" "frac("m", "s"^2, style:"horizontal"))\
+&"S"_"p" &&= "specific gravity of the particle" &&("dimensionless")\
+&"d" &&= "particle diameter" &&("m") $
+==== Detention time
+$ tau = "D"/"V"_"s" $
+where:
+$ &tau &&= "detention time" &&("s")\
+&"D" &&= "depth of flow" &&("m")\
+&"V"_"s" &&= "settling velocity" &&(frac("m", "s", style:"horizontal")) $
+==== Chamber/channel length (theoretical)
+$ "L" = tau dot "V"_"h" $
+where:
+$ &"L" &&= "theoretical chamber/channel length" &&("m")\
+&tau &&= "detention time" &&("s")\
+&"V"_"h" &&= "horizontal flow-through velocity" &&(frac("m", "s", style:"horizontal")) $
+==== Design length (with allowance for inlet/outlet turbulence)
+$ "L"_"design" = "f" dot "L" $
+where:
+$ &"L"_"design" &&= "design length, including inlet/outlet turbulence allowance" &&("m")\
+&"f" &&= "safety/turbulence factor (commonly" >= 1.25")"\
+&"L" &&= "theoretical chamber/channel length" &&("m") $
+=== Sedimentation / Settling Basins
+==== Surface area required
+$ "A"_"s" = "Q"/"V"_"o" $
+where:
+$ &"A"_"s" &&= "required surface area (total or per-basin)" &&("m"^2)\
+&"Q" &&= "design flow rate, matched to the" "A"_"s" "basis" &&(frac("m"^3, "day", style:"horizontal"))\
+&"V"_"o" &&= "surface (overflow) loading rate" &&(frac("m"^3, "m"^2 dot "day", style:"horizontal")) $
+==== Basin dimensions from L:W ratio
+$ "A"_"s" &= "r" dot "W"^2\
+"W" &= sqrt("A"_"s"/"r")\
+"L" &= "r" dot "W" $
+where:
+$ &"r" &&= "specified length-to-width ratio" &&("dimensionless")\
+&"W" &&= "basin width" &&("m")\
+&"L" &&= "basin length" &&("m") $
+==== Basin volume
+$ "V" = tau dot "Q" $
+where:
+$ &"V" &&= "basin volume (per basin, if" "Q" "is flow per basin)" &&("m"^3)\
+&tau &&= "detention time (consistent units with" "Q")\
+&"Q" &&= "flow rate through the basin" &&(frac("m"^3, "day", style:"horizontal")) $
+==== Basin depth
+$ "Depth" = "V"/"A"_"s" $
+where:
+$ &"V" &&= "basin volume" &&("m"^3)\
+&"A"_"s" &&= "basin surface area" &&("m"^2) $
+==== Weir loading rate
+$ "WLR" = "Q"/"L"_"weir" $
+where:
+$ &"Q" &&= "flow rate over the weir (per basin, if" "L"_"weir" "is per-basin)" &&(frac("m"^3, "day", style:"horizontal"))\
+&"L"_"weir" &&= "effluent weir length" &&("m") $

@@ -1,0 +1,34 @@
+#set page(width: 21cm, height: auto)
+#let C(temp) = box[#temp°C]
+#set list(
+  marker: level => (
+    if level == 1 { [◦] }
+    else if level == 2 { [◦] }
+    else { [•] }
+  )
+)
+
+= Week 1
+== Main Thermal Zone in a cement kiln
+===  Dehydration Zone, #C(500) -- #C(750)
+- Evaporation and removal of water.
+=== Calcination Zone, #C(500) -- #C(950)
+- Decomposing of limestone into carbon dioxide gas and free lime (CaO).
+- At the end, mix consists of oxides of four main elements.
+    - CaO
+    - SiO#sub[2]
+    - Al#sub[2]O#sub[3]
+    - Fe#sub[2]O#sub[3]
+=== Solid State Reaction Zone, #C(950) -- #C(1350)
+- CaO reacts with silica to form C#sub[2]S.
+- Intermediate calcium aluminates and calcium ferrite compounds form.
+    - These compounds play an important role as fluxing agents.
+=== Clinkering Zone, #C(1350) -- #C(1500)
+- Formation of C#sub[3]S occurs.
+- Melting of calcium aluminate and ferrite phases creates a liquid phase, causing raw mix to form clinker nodules.
+- C#sub[3]S crystals grow while C#sub[2]S crystals decrease.
+- Clinkering process is complete when:
+    - Silica is present as C#sub[3] and C#sub[2].
+    - Free lime, CaO, is reduced to \<1%.
+=== Cooling Zone
+-

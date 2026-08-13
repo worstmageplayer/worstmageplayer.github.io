@@ -1,0 +1,107 @@
+#set page(width: 21cm, height: auto)
+#let C(temp) = box[#temp°C]
+
+= Week 2
+== Workshop Question 1
+Jar testing showed that optimum coagulation with a particular raw drinking water source occured when a litre of it was dosed with 4 mL of a 10 g/L alum solution and a 1.6 mL of 5 g/L suspension of lime (Ca(OH)#sub[2]). Calculate the daily requirement of alum and lime to coagulate a flow of 350 L/s.
+=== Solution:
+First convert doses to mg/L. Because each litre of the alum stock solution contained 10g of alum, each millilitre contained 10 mg.\
+The optimum dose of 4 mL contained 40 mg of alum. This was added to a one litre sample. The alum dose was therefore 40 mg/L. By similar reasoning the lime dose was 8 mg/L.\
+Daily volume (V):
+$ "V" &= ("Q" dot 60 dot 60 dot 24)/10^6" ML/day"\
+&= (350 dot 60 dot 60 dot 24)/10^6\
+&= 30.24" ML/day" $
+Therefore, the daily chemical requirements are:\
+$ "Alum"&: 30.24 dot 40 &&= 1210 "kg"\
+"Lime"&: 30.24 dot 8 &&= 242 "kg" $
+
+== Workshop Question 2
+Determine the dimensions of a rapid-mixing basin to process 12,000 m#super[3]/d of water. The basin will be square and the depth is assumed to be 1.5 times the width. Use a detention time of 30 s and a velocity gradient of 700 s#super[-1]. The average minimum sustained temperature is #C(15) and the absolute viscosity is 1.139×10#super[-3] kg/(ms). Two rapid-mixing basins will be constructed with each having the capacity to process the entire flow. Determine the following
+#set enum(numbering: "a)")
++ Dimensions of L, W and D (m)
++ Power input (W)
+=== Solution:
++ Calculate volume of rapid-mixing basin by rearranging detention time equation.
+     $ "V" &= tau dot "Q"\
+     &= 30 dot "s" dot ((1.2 dot 10^3" m"^3)/(24 dot 3600" s")) = 4.2" m"^3 \
+     "V" &= "L" dot "W" dot "D"\
+     &= "W" dot "W" dot 1.5" W"\
+     "W" &= ((4.2" m"^3)/(1.5))^(1/3) = 1.4" m" = "L"\
+     "D" &= 1.5 dot 1.4" m" = 2.1" m" $
++ The power input is calculated by rearranging Equation (6.54)
+    $ "P" &= "G"^2 dot mu dot "V" \
+    &= (700" s"^(-1))^2 dot (1.139 dot 10^(-3)" "frac("kg" dot "m", "s", style:"horizontal"))(1.4" m" dot 1.4" m" dot 2.1" m")(N/frac("kg" dot "m", "s", style:"horizontal"))\
+    &= 2.3" kW" $
+    Therefore, contruct two rapid-mixing basins with dimensions of 1.4 m by 1.4 m by 2.1 m deep. Each basin would be provided with a nominal 2.3 kW mixer. The actual horsepower would be greater than this and may be estimated by dividing 2.3 kW by the combined efficiency of the mixer and motor.
+
+== Workshop Question 3
+A five-day BOD test is performed on an industrial wastewater sample that contains no bacteria; therefore, a "seeded" BOD test is run. 10 ml of "seed" are added to 20 L of dilution water. 30 ml of industrial wastewater are added to a 300 ml BOD bottle and the remaining volume consists of "seeded" dilution water. The average dissolved oxygen concentration of the diluted wastewater samples and blanks (seeded dilution water) on the first day of the test is 7.5 mg/L and 9.0 mg/L, respectively. After incubating seperate BOD bottles at #C(20) for five days, the average DO concentration of the diluted wastewater BOD bottles and seeded dilution water BOD bottles is 3.1 and 8.5 mg/L, respectively. Calculate the five-day BOD of the industrial wastewater.
+=== Solution:
+$ "BOD"_"t" = (("D"_1 - "D"_2) - ("B"_1 - "B"_2) dot f)/"P" $
+$ f &= ("% seed in diluted sample")/("% seed in control or blank")\
+&= (((270" ml")/(300" ml")))/(((300" ml")/(300" ml"))) = 0.90 $
+$ "BOD"_5 &= ((7.5-3.1) - (9.0 - 8.5) dot 0.90)/(((30" ml")/(300" ml")))\
+&= 39.5" mg/L" $
+
+== Workshop Question 4
+A conventional activated sludge process treats 3,785 m#super[3]/day of wastewater, containing 250 g/m#super[3] BOD#sub[5], and produces and effluent cointaining 20 g/m#super[3] BOD#sub[5]. The nominal detention time in the aeration basin excluding the RAS flow is six hours and the MLSS concentration is 3,000 g/m#super[3]. Determine the following:
++ The aeration basin volume (m#super[3])
++ F/M ratio (d#super[-1])
++ Specific substrate utilisation rate (d#super[-1])
++ Substrate removal efficiency (%)
+=== Solution:
++ Calculate the volume using Equation (7.49)
+    $ "V" &= tau dot "Q"\
+    &= 6" h" dot (3,785" m"^3)/(24" h")\
+    &= 946" m"^3 $
++ F/M ration is calculated using Equation (7.50)
+    $ "F/M" &= (("Q""S")/("X""V")) \
+    &= (3,785 frac(" m"^3, "d", style:"horizontal") dot 250 frac("g", "m"^3, style:"horizontal")) / (3000 frac("g", "m"^3, style:"horizontal") dot 946" m"^3) \
+    &= 0.33 ("g""BOD"_5)/("g""SS" dot "d") $
++ U is calculated using Equation (7.51)
+    $ "U" &= ("Q"("S"_"i" - "S"_"e")) / ("X" dot "V") \
+    &= (3,785 frac(" m"^3, "d", style:"horizontal") dot (250 frac("g", "m"^3, style:"horizontal") - 20 frac("g", "m"^3, style:"horizontal"))) / (3000 frac("g", "m"^3, style:"horizontal") dot 946" m"^3) \
+    &= 0.31 ("g""BOD"_5)/("g""TSS" dot "d") $
++ Treatment efficiency is calculated using Equation (7.52)
+    $ "E" &= ("C"_"i" - "C"_"e")/("C"_"i") dot 100% \
+    &= (250 frac("g", "m"^3, style:"horizontal") - 20 frac("g", "m"^3, style:"horizontal"))/(250 frac("g", "m"^3, style:"horizontal")) dot 100%\
+    &= 92% $
+
+== Workshop Question 5
+Settled sewage at a flow rate of 2.5 ML/d and 200 mg/L BOD is treated in an activated sludge plant which is equipped with two aeration tanks each 25 m long, 5 m wide and 4 m deep, and with a mixed liquor volatilie SS (MLVSS) concentration of 2000 mg/L. Calculate the detention time and the F/M ratio.
+=== Solution:
+$ "Detention time," tau &= "V"/"Q"\
+&= (2 dot 25 dot 5 dot 4) / 2500\
+&= 0.4" days" = 9.6" hours" $
+$ "F/M ratio" &= ("Mass BOD" frac("load", "day", style:"horizontal")) / ("Mass MLVSS in aeration tank")\
+&= (500" kg" frac("load", "day", style:"horizontal"))/(1000" m"^3 dot (2000/1000) frac("kg", "m"^3, style:"horizontal"))\
+&= 0.25" kg BOD/kg MLVSS" dot "d" $
+
+== Workshop Question 6
+Two circular secondary clarifiers will be used to treat an average daily flow (ADF) of 5,000 m#super[3]/d from a high-purity oxygen activated sludge process with a MLSS concentration of 6,000 mg/L. At peak flow (10,000 m#super[3]/d), the MLSS concentration is reduced to 4,500 g/m#super[3]. The RAS flow at average and peak flows are 3,000 and 6,000 m#super[3]/d, respectively. Additional design criteria include overflow rates of 30 and 70 m#super[3]/(dm#super[2]) and solids loading rates of 100 and 240 kg/(dm#super[2]), respectively at average and peak loading conditions. Determine the diameter (m) of the clarifiers.
+=== Solution:
+First, determine the clarifier area based on overflow rate:
+$ "V"_"o" = "Q"/"A" $
+ADF conditions:
+$ "A" &= ("Q" + "Q"_"r")/"V"_"o"\
+&= ((5000+3000)" "frac("m"^3, "d", style:"horizontal"))/(30" "frac("m"^3, ("d" dot "m"), style:"horizontal"))\
+&= 267" m"^2 $
+Peak flow conditions:
+$ "A" &= ("Q" + "Q"_"r")/"V"_"o"\
+&= ((10000+6000)" "frac("m"^3, "d", style:"horizontal"))/(70" "frac("m"^3, ("d" dot "m"), style:"horizontal"))\
+&= 229" m"^2 $
+Next, determine clarifier area based on solids loading rate:
+$ "A"_"s" &= (("Q" + "Q"_"r") "MLSS") / "SLR" \
+&= ((5000 + 3000) frac("m"^3, "d", style:"horizontal") (6000) frac("g", "m"^3, style:"horizontal") (1" kg") / (1000" g"))/(100 frac("kg", "d" dot "m"^2, style:"horizontal"))\
+&= 480" m"^2 $
+$ "A"_"s" &= (("Q" + "Q"_"r") "MLSS") / "SLR" \
+&= ((10000 + 6000) frac("m"^3, "d", style:"horizontal") (45000) frac("g", "m"^3, style:"horizontal") (1" kg") / (1000" g"))/(240 frac("kg", "d" dot "m"^2, style:"horizontal"))\
+&= 300" m"^2 $
+The largest area is $480" m"^2$, determine the diameter as follows:
+$ "A"_"s" &= (pi dot "D"^2)/4\
+&= (480" m"^2)/2\
+&= 240" m"^2 \
+"D" &= 17.5" m" $
+
+
+== Formulas in Week 2

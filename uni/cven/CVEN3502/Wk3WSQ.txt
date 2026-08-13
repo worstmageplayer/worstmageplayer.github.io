@@ -1,0 +1,81 @@
+#set page(width: 21cm, height: auto)
+#let C(temp) = box[#temp°C]
+
+= Week 3
+== Workshop Question 1
+A wastewater treatment plant produces thickened primary sludge at a rate of 5000 kg/day. This thickened sludge contains 5% solids by mass, of which 80% is volatile solids.
+
+A Biochemical Methane Potential (BMP) test for this thickened sludge shows a total methane yield of 250 NmL/gVS.
+
+The thickened sludge is to be processed by anaerobic digestion and methane gas is to be recovered.
+
+#enum(numbering: "a)", start: 1)[
+If the digesters operate with 85% efficiency for volatile solids degradation, determine the potential volumetric methane production rate.]
+
+The size of the anaerobic digesters is such that small additional volume (about 10%) is available, in addition to the volume occupied by 5000 kg/day thickened sludge. The plant operators believe they can increase overall methane production by 'co-digestion' with 500 kg/day of available food waste.
+
+The food waste has a total solids content of 30%, of which 91% is volatile solids. The BMP is determined to be 519 NmL/gVS, and the treatment efficiency is 95%.
+
+#enum(numbering: "a)", start: 2)[
+Calculate the total potential methane production (volume per day) from 5000 kg/day thickened sludge mixed with 500 kg/day food waste.]
+
+Methane has a molecular mass of 16 g/mol and a molar volume (at standard temperature and pressure) of 22.4 L/mol.
+
+#enum(numbering: "a)", start: 3)[
+Calculate the daily mass of methane produced.]
+=== Solution:
+#set enum(numbering: "a)")
++ $ "Q"_("CH"_4) &= "M" dot "TS" dot "VS" dot "BMP" dot eta\
+&= 5000 dot 10^3 frac("g", "day", style:"horizontal") dot 0.05 dot 0.8 dot 250 frac("NmL", "gVS", style:"horizontal") dot 0.85 \
+&= 42,500 frac("L", "day", style:"horizontal") $
++ $ "Q"_"food waste" &= "M" dot "TS" dot "VS" dot "BMP" dot eta\
+&= 500 dot 10^3 frac("g", "day", style:"horizontal") dot 0.3 dot 0.91 dot 519 frac("NmL", "gVS", style:"horizontal") dot 0.95 \
+&= 67,301 frac("L", "day", style:"horizontal")\
+"Q"_"total" &= "Q"_("CH"_4) + "Q"_"food waste"\
+&= 42,500 + 67,301\
+&= 109.801 frac("L", "day", style:"horizontal") $
++ Convert volume to moles:
+    $ "n" &= "V"/"V"_"m"\
+    &= (109,801 frac("L", "day", style:"horizontal")) / (22.4 frac("L", "mol", style:"horizontal"))\
+    &= 4902 frac("mol", "day", style:"horizontal") $
+    Convert moles to mass:
+    $ "m" &= "n" dot "MV" \
+    &= 4902 frac("mol", "day", style:"horizontal") dot 16 frac("g", "mol", style:"horizontal") dot 10^(-3) frac("g", "kg", style:"horizontal")\
+    &= 78 frac("kg", "day", style:"horizontal")$
+
+== Workshop Question 2
+Sydney Water processes wastewater from 1.4 million households at Malabar Sewage Treatment Plant. This wastewater is treated by primary sedimentation, producing primary sludge of 500 m#super[3] day#super[-1]. A representative sample of primary sludge was sent to Sydney Water analytical laboratories for characterisation and the following results were produced:
+
+- Specific gravity: 1.022
+- Moisture fraction: 0.850
+- Volatile fraction of total solids: 0.761
+- Total BMP (measured over 20 days): 220 NmLgVS#super[-1]
+
+The following molar masses are provided:
+
+- carbon (C) = 12.0 g/mol
+- hydrogen (H) = 1.00 g/mol
+- oxygen (O) = 16.0 g/mol
+- nitrogen (N) = 14.0 g/mol
+
+All gasses have a molar volume (at standard temperature and pressure) of 22.4 L mol#super[-1].
+
++ Assuming the digesters operate with 85% efficiency for volatile solids degradation, determine the daily mass of methane that may be produced.
++ In addition to methane, describe the other major chemical product that will be produced by this anaerobic digestion process and determine the daily mass.
+=== Solution:
++  Calculate the mass of substrate (sludge) fed into the reactor per day ($"Q"_"i"$). This is the sum of the mass of dry solids ($"M"_"s"$) plus the mass of the water ($"M"_"w"$).
+$ "P" &= sum"Q"_"i" dot "TS"_"i" dot "VS"_"i" dot "BMP"_"i" $
+
+== Workshop Question 3
+=== Solution:
+
+== Workshop Question 4
+=== Solution:
+
+== Workshop Question 5
+=== Solution:
+
+== Workshop Question 6
+=== Solution:
+
+== Formulas in Week 3
