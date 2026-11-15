@@ -26,3 +26,11 @@ Use these guidelines when building or changing an interface that loads data or m
 
 - Check first visit, return navigation, slow requests, partial responses, empty results, and failures. Confirm navigation remains usable and content does not flash through unnecessary placeholders.
 - Report which waits were removed, which loading states remain and why, and any backend or media changes still needed.
+
+# AI-generated content disclosure
+
+- Clearly label AI-generated content and tools in the user-facing interface. For tools, place a short, visible notice near the title or introduction: “AI-generated tool. Results may contain errors—check important output before relying on it.”
+- For other AI-generated content, label the relevant content or section where users will encounter it. Scope the notice to the generated material; do not imply that unrelated content is AI-generated.
+- Distinguish AI-assisted development from runtime AI processing. Do not imply that user input is sent to an AI service when the tool processes it locally. Describe actual processing accurately.
+- The currently identified AI-generated material is in `tools/`: Text Cleaner and Metadata Viewer. Keep their individual notices and the Tools index disclosure when updating them. Extend disclosures when adding AI-generated material elsewhere.
+- Keep disclosures readable, accessible, and present on initial render without a modal or asynchronous request.
