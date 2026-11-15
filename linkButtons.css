@@ -36,6 +36,14 @@
     --btn-border: #181716;
 }
 
+.btn--tools {
+    --btn-font: "MonaSans", sans-serif;
+    --btn-font-weight: 400;
+    --btn-bg: #2563eb;
+    --btn-color: #ffffff;
+    --btn-border: #ffffff;
+}
+
 .btn--osu {
     --btn-font: "Torus", sans-serif;
     --btn-font-weight: 400;

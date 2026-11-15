@@ -1,0 +1,20 @@
+{
+  "name": "metadataviewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --check app.js && node --check worker-src.js && node --check worker.js && node smoke.mjs"
+  },
+  "keywords": [],
+  "type": "module",
+  "dependencies": {
+    "esbuild": "^0.28.2",
+    "exifreader": "^4.54.0",
+    "fflate": "^0.8.3",
+    "mediainfo.js": "^0.3.8",
+    "opentype.js": "^2.0.0",
+    "pdfjs-dist": "^6.5.438"
+  }
+}
